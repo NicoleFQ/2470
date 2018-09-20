@@ -1,0 +1,21 @@
+<Assignment 3>
+
+<HTML>
+  <HEAD>
+    <TITLE>Servlet ShowShape</TITLE>
+  </HEAD>
+
+  <BODY>
+    <FORM METHOD="POST" ACTION=
+      "http://localhost:8080/servlet/ShowShapeServlet">
+      What is your favorite pet?<BR><BR>
+      <INPUT TYPE=radio NAME=animal VALUE=dog>Dog<BR> 
+      <INPUT TYPE=radio NAME=animal VALUE=cat>Cat<BR> 
+      <INPUT TYPE=radio NAME=animal VALUE=bird>Bird<BR> 
+      <INPUT TYPE=radio NAME=animal VALUE=snake>Snake<BR> 
+      <INPUT TYPE=radio NAME=animal VALUE=none CHECKED>None 
+      <BR><BR><INPUT TYPE=submit VALUE="Submit">
+      <INPUT TYPE=reset>
+    </FORM>
+ </BODY>
+</HTML>

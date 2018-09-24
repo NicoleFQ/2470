@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Assignment 3</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="col-md-12" align="center" style="background-color: black">
+	<h1 style="color: aliceblue">Applet Viewer</h1>
+</div>
+</head>
+<body onload="CallApplet()">
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="col-sm-4" style="background-color: lavender;">
+				<form ACTION=ShowShapeServlet METHOD="POST">
+					<div class="form-row col-md-12">
+
+
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3>
+								<kbd>Applet</kbd>
+							</h3>
+						</div>
+
+						<div class="form-row col-md-4" align="center">
+							<label for="width">Width</label> <input type="number"
+								class="form-control" id="appletWidth" maxlength="3"
+								name="appletWidth" min="1" max="999" value="300">
+						</div>
+
+						<div class="form-row col-md-4" align="center">
+							<label for="height">Height</label> <input type="number"
+								class="form-control" id="appletHeight" maxlength="3"
+								name="appletHeight" min="1" max="999" value="150">
+						</div>
+
+						<div class="form-row col-xs-4" align="center">
+							<label for="BGColor">BGColor</label> <select id="BGColor"
+								class="form-control" name="BGColor">
+								<option selected value="white">White</option>
+								<option value="red">Red</option>
+								<option value="black">Black</option>
+								<option value="blue">Blue</option>
+								<option value="cyan">Cyan</option>
+								<option value="dark grey">Dark Grey</option>
+								<option value="grey">Gray</option>
+								<option value="light gray">Light Gray</option>
+								<option value="green">Green</option>
+								<option value="magenta">Magenta</option>
+								<option value="orange">Orange</option>
+								<option value="yellow">Yellow</option>
+								<option value="pink">Pink</option>
+							</select>
+						</div>
+
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+
+						<div class="col-md-12" align="center">
+							<h3>
+								<kbd>Shape</kbd>
+							</h3>
+						</div>
+						<div class="form-row col-xs-3" align="center"></div>
+						<div class="form-row col-xs-6" align="center">
+							<label for="Shape">Shape</label> <select id="Shape"
+								class="form-control" name="Shape">
+								<option selected value="OVAL">Oval</option>
+								<option value="RECT">Rectangle</option>
+								<option value="ROUNDRECT">Round Rectangle</option>
+							</select>
+						</div>
+						<div class="form-row col-xs-12" align="center"></div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+
+						<div class="form-row col-md-4" align="center">
+							<label for="X">Width</label> <input type="number"
+								class="form-control" id="X" maxlength="3" name="X" value="100"
+								min="1" max="999">
+						</div>
+
+						<div class="form-row col-md-4" align="center">
+							<label for="Y">Height</label> <input type="number"
+								class="form-control" id="Y" maxlength="3" name="Y" value="100"
+								min="1" max="999">
+						</div>
+						<div class="form-row col-xs-4" align="center">
+							<label for="inputBGColor">Color</label> <select id="Color"
+								class="form-control" name="Color">
+								<option value="white">White</option>
+								<option value="red">Red</option>
+								<option value="black">Black</option>
+								<option selected>Blue</option>
+								<option value="cyan">Cyan</option>
+								<option value="dark grey">Dark Grey</option>
+								<option value="grey">Gray</option>
+								<option value="light gray">Light Gray</option>
+								<option value="green">Green</option>
+								<option value="magenta">Magenta</option>
+								<option value="orange">Orange</option>
+								<option value="yellow">Yellow</option>
+								<option value="pink">Pink</option>
+							</select>
+						</div>
+
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+
+						<div class="col-md-12" align="center">
+							<h3>
+								<kbd>Message</kbd>
+							</h3>
+						</div>
+
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+
+							<div class="radio">
+								<label class="radio-inline"><input type="radio"
+									name="FTStyle" value="REGULAR" checked>Regular </label> <label
+									class="radio-inline"><input type="radio" name="FTStyle"
+									value="BOLD"><strong>Bold</strong></label> <label
+									class="radio-inline"><input type="radio" name="FTStyle"
+									value="ITALIC"><em>Italic</em></label> <label
+									class="radio-inline"><input type="radio" name="FTStyle"
+									value="BOLD ITALIC"><strong><em>Bold
+											Italic</em></strong></label>
+							</div>
+						</div>
+
+						<div class="col-md-9">
+							<textarea class="form-control" rows="3" id="message"
+								name="Message"
+								placeholder="Type your message here (20 characters Max)"
+								maxlength="20"></textarea>
+						</div>
+						<div class="form-row col-xs-3" align="center">
+							<label for="FTSize">Size:</label> <input type="number"
+								class="form-control" id="FTSize" maxlength="3" name="FTSize"
+								value="12" min="1" max="99">
+						</div>
+
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+
+						<div class="col-md-12" align="center">
+							<button type="submit" class="btn btn-primary"
+								onclick="callApplet();">Show Banner</button>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="col-md-8" style="background-color: darkslateblue;">
+				<div class="row">
+					<div class="col-md-12" align="center">
+						<h3></h3>
+					</div>
+					<script>
+						function callApplet() {
+							var a = document.getElementById("Message").value;
+							document.getElementById("msg").innerHTML = a;
+
+							var b = document.getElementById("Shape").value;
+							document.getElementById("shp").innerHTML = b;
+
+							var c = document.getElementById("Color").value;
+							document.getElementById("shpcl").innerHTML = c;
+
+							var d = document.getElementById("BGColor").value;
+							document.getElementById("bgcl").innerHTML = d;
+
+							var e = document.getElementById("X").value;
+							document.getElementById("x").innerHTML = e;
+
+							var f = document.getElementById("Y").value;
+							document.getElementById("y").innerHTML = f;
+
+							var g = document.getElementById("FTStyle").value;
+							document.getElementById("ftstl").innerHTML = g;
+
+							var h = document.getElementById("FTSize").value;
+							document.getElementById("ftsz").innerHTML = h;
+						}
+					</script>
+
+					<label>Your input: </label>
+					<p>
+						<span id='msg'></span>
+					</p>
+					<p>
+						<span id='shp'></span>
+					</p>
+					<p>
+						<span id='shpcl'></span>
+					</p>
+					<p>
+						<span id='bgcl'></span>
+					</p>
+					<p>
+						<span id='x'></span>
+					</p>
+					<p>
+						<span id='y'></span>
+					</p>
+					<p>
+						<span id='ftstl'></span>
+					</p>
+					<p>
+						<span id='ftsz'></span>
+					</p>
+
+
+					<!-- 
+					<div class="col-md-12">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th>Applet Width</th>
+									<th>Applet Height</th>
+									<th>BG Color</th>
+									<th>Shape</th>
+									<th>Shape Width</th>
+									<th>Shape Height</th>
+									<th>Shape Color</th>
+									<th>Font Style</th>
+									<th>Font Size</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>q</td>
+									<td>d</td>
+									<td>d</td>
+									<td><span id="BGColor"></span></td>
+									<td><span id="Shape"></span></td>
+									<td><span id="X"></span></td>
+									<td><span id="Y"></span></td>
+									<td><span id="Color"></span></td>
+									<td><span id="FTStyle"></span></td>
+									<td><span id="FTSize"></span></td>
+								</tr>
+
+							</tbody>
+						</table>
+
+
+ -->
+					<div class="col-sm-4"></div>
+					<div class="col-sm-8">
+						<applet code="ShowShape" width="300" height="150">
+							<param name=Message id="msg">
+							<param name=Shape id="shp">
+							<param name=ShapeColor id="shpcl">
+							<param name=BGColor id="bgcl">
+							<param name=X id="x">
+							<param name=Y id="y">
+							<param name=FTStyle id="ftstl">
+							<param name=FTSize id="ftsz">
+						</applet>
+
+
+
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+						<div class="col-md-12" align="center">
+							<h3></h3>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>
+

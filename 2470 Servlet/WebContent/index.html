@@ -52,12 +52,12 @@
 								class="form-control" name="BGColor">
 								<option selected value="white">White</option>
 								<option value="red">Red</option>
-								<option value="black font-weight-bold" color="Black">Black</option>
+								<option value="black" color="Black">Black</option>
 								<option value="blue"><strong>Blue</strong></option>
 								<option value="cyan">Cyan</option>
-								<option value="dark grey">Dark Grey</option>
-								<option value="grey">Gray</option>
-								<option value="light gray">Light Gray</option>
+								<option value="darkGray">Dark Gray</option>
+								<option value="gray">Gray</option>
+								<option value="lightGray">Light Gray</option>
 								<option value="green">Green</option>
 								<option value="magenta">Magenta</option>
 								<option value="orange">Orange</option>
@@ -117,12 +117,12 @@
 							class="form-control" name="Color">
 							<option value="white">White</option>
 							<option value="red" color="red">Red</option>
-							<option value="black font-weight-bold" color="Black">Black</option>
+							<option value="black" color="Black">Black</option>
 							<option selected value="blue"><strong>Blue</strong></option>
 							<option value="cyan">Cyan</option>
-							<option value="dark grey">Dark Grey</option>
-							<option value="grey">Gray</option>
-							<option value="light gray">Light Gray</option>
+							<option value="darkGray">Dark Gray</option>
+							<option value="gray">Gray</option>
+							<option value="lightGray">Light Gray</option>
 							<option value="green">Green</option>
 							<option value="magenta">Magenta</option>
 							<option value="orange">Orange</option>
@@ -167,7 +167,7 @@
 
 					<div class="col-md-9">
 						<textarea class="form-control" rows="3" id="message" name = "Message"
-							placeholder="Type your message here (20 characters Max)"  maxlength="20"></textarea>
+							placeholder="Type your message here (20 characters Max)"  maxlength="20" value="Welcome to Servlets!"></textarea>
 					</div>
 					<div class="form-row col-xs-3" align="center">
 						<label for="FTSize">Size:</label> <input type="number"
@@ -183,7 +183,7 @@
 					</div>
 
 					<div class="col-md-12" align="center">
-						<button type="submit" class="btn btn-primary" align="center">Show
+						<button type="submit" class="btn btn-primary btn-block btn-lg" align="center">Show
 							Banner</button>
 					</div>
 					<div class="col-md-12" align="center" font>
@@ -256,14 +256,16 @@
 						<h3></h3>
 					</div>
                     <applet code="ShowShape.class"  width="300" height="150">
-					<param name=Message value="null">
-					<param name=Shape value="OVAL">
-					<param name=ShapeColor value="blue">
-					<param name=BGColor value="white">
-					<param name=X value="200">
-					<param name=Y value="100">
-					<param name=FTStyle value="REGULAR">
-					<param name=FTSize value="12">
+					<param name= Message value="Welcome to Servlets">
+					<param name= Shape value= "OVAL">
+					<param name= ShapeColor value="blue">
+					<param name= BGColor value="white">
+					<param name= X value="200">
+					<param name= Y value="100">
+					<param name= FTStyle value="REGULAR">
+					<param name= FTSize value="12">
+					<param name=AppletX value=300>
+					<param name=AppletY value=150>
 				    </applet>
                     
                      <div class="col-md-12" align="center" font>
